@@ -2,6 +2,7 @@
 #define _HOLBERTON_H_
 #include <stdarg.h>
 #include <stdlib.h>
+
 /**
  * struct print - struct print
  *
@@ -12,8 +13,9 @@
  */
 typedef struct print
 {
-	char *character;
-	int (*f)(va_list);
+  char *character;
+  int (*f)(va_list);
+
 } print;
 int _printf(const char *format, ...);
 int print_char(va_list list);
