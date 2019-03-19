@@ -20,6 +20,9 @@ int _printf(const char *format, ...)
 	int countword = 0, count = 0;
 	int i, j;
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(list, format);
 
 	for (i = 0; format != NULL && format[i] != '\0'; i++)
@@ -33,11 +36,16 @@ int _printf(const char *format, ...)
 				{
 					countword += func[j].f(list);
 					i++;
+					if (format[i] == '%')
+						break;
 				}
 			}
 		}
-		_putchar(format[i]);
-		count++;
+		else
+		{
+			_putchar(format[i]);
+			count++;
+		}
 	}
 	return (count + countword);
 }
