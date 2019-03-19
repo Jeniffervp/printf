@@ -27,16 +27,16 @@ int _printf(const char *format, ...)
 
 	for (i = 0; format != NULL && format[i] != '\0'; i++)
 	{
+
 		if (format[i] == '%')
 		{
-			i++;
 			for (j = 0; j < 5; j++)
 			{
-				if (format[i] == *(func[j]).character)
+				if (format[i + 1] == *(func[j]).character)
 				{
 					countword += func[j].f(list);
 					i++;
-					if (format[i] == '%')
+					if (format[i + 1] == '%')
 						break;
 				}
 			}
