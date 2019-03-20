@@ -12,7 +12,7 @@ int print_int(va_list list)
 {
 	char p[10];
 	int i;
-	int num = va_arg(list, int);
+	long int num = va_arg(list, int);
 	int chars = 0;
 
 	if (num < 0)
