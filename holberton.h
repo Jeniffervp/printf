@@ -13,8 +13,8 @@
  */
 typedef struct print
 {
-  char *character;
-  int (*f)(va_list);
+	char *character;
+	int (*f)(va_list);
 
 } print;
 int _printf(const char *format, ...);
