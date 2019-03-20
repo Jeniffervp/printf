@@ -10,11 +10,8 @@
 int _printf(const char *format, ...)
 {
 	print func[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_percent},
-		{"i", print_int},
-		{"d", print_int},
+		{"c", print_char}, {"s", print_string}, {"%", print_percent},
+		{"i", print_int}, {"d", print_int}
 	};
 	va_list list;
 	int countword = 0, count = 0;
@@ -27,7 +24,7 @@ int _printf(const char *format, ...)
 	{
 
 		if (format[i] == '%')
-    {
+		{
 			if (format[1] == '\0')
 				return (-1);
 			for (j = 0; j < 5; j++)
@@ -40,7 +37,7 @@ int _printf(const char *format, ...)
 						break;
 				}
 			}
-			if (format[i] == '%')
+			if (format[i] == '%' && format[i - 1] != '%')
 				count += _putchar(format[i]);
 		}
 		else
