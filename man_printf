@@ -1,0 +1,54 @@
+.Dd 19/03/19               \" DATE
+.Dt _printf 1      \" Program name and manual section number
+.Os _printf
+.Sh NAME                 \" Section Header - required - don't modify
+.Nm _printf
+.Nd formatted output conversion.
+.Sh SYNOPSIS             \" Section Header - required - don't modify
+
+.Nm int printf(const char *format, ...);
+
+.Sh DESCRIPTION
+          \" Section Header - required - don't modify
+The 
+.Nm _printf
+function produces formatted text to the standard output according to the format 
+specifiers previously given.
+.Pp \" Inserts a space
+The type of data that 
+.Nm _printf 
+receives are:
+
+.Bl -tag -width -indent  \" Differs from above in tag removed
+.Nm %c                 \"-a flag as a list item
+converts characters.
+.Pp
+.Nm %s
+converts strings.
+.Pp
+.Nm %i
+converts integers.
+.Pp
+.Nm %d
+converts decimal.
+.Pp
+.Nm %%
+print one %.
+
+.El                      \" Ends the list
+
+Any other character will be printed literally. 
+
+.Pp
+
+.Nm Return value
+
+
+Upon successful return, these functions return the number of characters printed 
+(excluding the null byte used to end output to strings).
+
+.\" .El
+
+.Sh AUTORS \" Document history if command behaves in a unique manner
+.Pp
+Written by Diego Orejuela and Jeniffer Vanegas.
