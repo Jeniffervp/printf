@@ -1,11 +1,11 @@
 # printf
 Printf: this project is about to made our own function of printf.
 
-**How to use*:
+**How to use**:
 
 int printf(const char *format, ...);
 
-**Description*:
+**Description**:
 
 The _printf function produces formatted text to the standard output according to the format specifiers previously given.
 
