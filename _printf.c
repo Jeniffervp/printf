@@ -4,7 +4,7 @@
   * _printf - print.
   *@format: is the constant that contains a character string.
   *
-  * Return: Always 0
+  * Return: lenth of printed.
  */
 
 int _printf(const char *format, ...)
@@ -22,30 +22,28 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-
 	va_start(list, format);
-
 	for (i = 0; format != NULL && format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
-			i++;
+			if (format[1] == '\0')
+				return (-1);
 			for (j = 0; j < 5; j++)
 			{
-				if (format[i] == *(func[j]).character)
+				if (format[i + 1] == *(func[j]).character)
 				{
 					countword += func[j].f(list);
 					i++;
-					if (format[i] == '%')
+					if (format[i + 1] == '%')
 						break;
 				}
 			}
+			if (format[i] == '%')
+				count += _putchar(format[i]);
 		}
 		else
-		{
-			_putchar(format[i]);
-			count++;
-		}
+			count += _putchar(format[i]);
 	}
 	return (count + countword);
 }
