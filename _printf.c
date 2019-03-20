@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 {
 	print func[] = {
 		{"c", print_char}, {"s", print_string}, {"%", print_percent},
-		{"i", print_int}, {"d", print_int}
+		{"i", print_int}, {"d", print_int}, {"b", print_binary}
 	};
 	va_list list;
 	int countword = 0, count = 0;
@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[1] == '\0')
 				return (-1);
-			for (j = 0; j < 5; j++)
+			for (j = 0; j < 6; j++)
 			{
 				if (format[i + 1] == *(func[j]).character)
 				{
